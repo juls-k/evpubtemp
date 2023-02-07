@@ -23,7 +23,7 @@
   width: 100%;
 }
 .back-button {
-  background: url('/img/ic-back.png') no-repeat center;
+  background: url('../img/ic-back.png') no-repeat center;
   background-size: contain;
   display: block;
   width: 18px;
@@ -58,7 +58,7 @@
   flex: 1;
 }
 .quick-menu-button.quick-charge {
-  background: url("/img/ic-lightening@3x.png") no-repeat center;
+  background: url("../img/ic-lightening@3x.png") no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
@@ -66,7 +66,7 @@
   height: 20px;
 }
 .quick-menu-button.quick-location {
-  background: url("/img/ic-location@3x.png") no-repeat center;
+  background: url("../img/ic-location@3x.png") no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
@@ -74,7 +74,7 @@
   height: 20px;
 }
 .quick-menu-button.quick-my-page.active {
-  background: url("/img/ic-my-page-active@3x.png") no-repeat center;
+  background: url("../img/ic-my-page-active@3x.png") no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
@@ -135,7 +135,7 @@
   color: #fff;
 }
 .monthly-container .title .button-detail {
-  background: url('/img/ic-arrow-right@3x.png') no-repeat center;
+  background: url('../img/ic-arrow-right@3x.png') no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
@@ -211,7 +211,7 @@
   font-weight: 700;
 }
 .card-title .button-detail {
-  background: url('/img/ic-arrow-right-grey@3x.png') no-repeat center;
+  background: url('../img/ic-arrow-right-grey@3x.png') no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
@@ -254,7 +254,7 @@
   color: #231815;
 }
 .menu .button-detail {
-  background: url('/img/ic-arrow-right-blue@3x.png') no-repeat center;
+  background: url('../img/ic-arrow-right-blue@3x.png') no-repeat center;
   background-size: contain;
   text-align: center;
   display: block;
