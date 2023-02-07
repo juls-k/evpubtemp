@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-top">
+        <a class="back-button"></a>
+        <h1 class="current-page">My</h1>
+      </div>
+      <div class="header">
+      </div>
+      <div class="contents">
+        <div class="user">
+          <div class="user-name">
+            <span class="text-hello">안녕하세요,</span>
+            <p class="text-user-name">김재훈 님</p>
+          </div>
+          <div class="monthly-container">
+            <div class="title">
+              <span class="text-monthly-title">이번 달에</span><a class="button-detail"></a>
+            </div>
+            <div class="amount-container">
+              <span class="amount">76,504</span>
+              <div class="unit-container">
+                <span class="unit">원</span>
+              </div>
+            </div>
+            <div class="amount-container">
+              <span class="amount">251.22</span>
+              <div class="unit-container">
+                <span class="unit">kW</span>
+                <span class="text-together">만큼 함께 했어요.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-title">
+              <span class="text-card-title">최근 충전 이력</span><a href="./recent-charge-history.html" class="button-detail"></a>
+            </div>
+            <div class="card-contents">
+              <canvas id="recent-charge-chart" style="max-height: 300px; height: 28vh; width: 50vw; padding: 16px 10px 10px 10px">
+              </canvas>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <span class="text-card-title">결제카드</span><a class="button-detail"></a>
+            </div>
+            <div class="card-contents">
+              <img src="img/card.png" class="payment-image">
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/event-example.png">
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <span class="text-card-title">내 차량 정보</span><a class="button-detail"></a>
+            </div>
+            <div class="card-contents">
+              <div>
+                <span>서비스 준비 중</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-list">
+        <div class="menu">
+          <span class="text-menu-title">공지사항</span><a class="button-detail"></a>
+        </div>
+        <div class="menu">
+          <span class="text-menu-title">자주 묻는 질문</span><a class="button-detail"></a>
+        </div>
+        <div class="menu">
+          <span class="text-menu-title">A/S 및 고장 신고</span><a class="button-detail"></a>
+        </div>
+        <div class="menu">
+          <span class="text-menu-title">앱 설정</span><a class="button-detail"></a>
+        </div>
+        <div class="menu last-menu">
+          <span class="text-menu-title">정책 및 약관</span><a class="button-detail"></a>
+        </div>
+        <p class="text-copyright">Copyright ⓒ 2022 (주)크로커스 All rights reserved.</p>
+      </div>
+      <div class="footer">
+        <div class="quick-menu-button quick-charge"></div>
+        <div class="quick-menu-button quick-location"></div>
+        <div class="quick-menu-button quick-my-page active"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const canvas = document.getElementById('recent-charge-chart');
+    const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 170);
+    gradient.addColorStop(0, '#00A29A');
+    gradient.addColorStop(0.2, '#1297A5');
+    gradient.addColorStop(1, '#3E7EC1');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(20, 20, 150, 100);
+
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: ['11월', '12월', '1월'],
+        datasets: [{
+          barThickness: 8,
+          borderWidth: 0,
+          label: '사용량',
+          data: [80, 19, 3],
+          backgroundColor: [gradient, gradient, gradient],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+        scales: {
+          y: {
+            display: false,
+          },
+          x: {
+            grid: {
+              display: false
+            },
+            border: {
+              display: false,
+            },
+            ticks: {
+              font: {
+                size: 16,
+                weight: 700,
+                color: '#9FA0A0',
+              }
+            }
+          }
+        },
+      },
+      height: 400
+    });
+  </script>
+</html>

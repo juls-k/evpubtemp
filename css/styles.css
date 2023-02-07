@@ -1,0 +1,268 @@
+@import 'reset.css';
+.container {
+  display: flex;
+  flex-direction: column;
+}
+/**
+  Header S
+ */
+.header {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(314.32deg, #3E7EC1 51%, #1297A5 86%, #00A29A 100%);
+}
+.header-top {
+  display: flex;
+  padding: 10px 16px 10px 16px;
+  align-items: center;
+  gap: 14px;
+  position: fixed;
+  background: linear-gradient(260deg, #3E7EC1 25%, #1297A5 86%, #00A29A 100%);
+  width: 100%;
+}
+.back-button {
+  background: url('/img/ic-back.png') no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.current-page {
+  text-align: center;
+  padding-top: 4px;
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Inter';
+  font-size: 20px;
+}
+/**
+  Header E
+ */
+
+
+/**
+  Footer S
+ */
+.footer {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  background-color: #4D73B8;
+  align-items: center;
+}
+.quick-menu-button {
+  flex: 1;
+}
+.quick-menu-button.quick-charge {
+  background: url("/img/ic-lightening@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.quick-menu-button.quick-location {
+  background: url("/img/ic-location@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.quick-menu-button.quick-my-page.active {
+  background: url("/img/ic-my-page-active@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+/**
+  Footer E
+ */
+
+
+/**
+  Contents
+ */
+.contents {
+  padding-top: 44px;
+}
+
+/**
+  Contents - USER S
+ */
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 16px 20px 16px;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 10px 0 10px
+}
+.text-hello {
+  color: #fff;
+}
+.text-user-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+}
+.monthly-container {
+  padding: 16px 24px;
+  /*height: 108px;*/
+  background: rgba(143, 181, 224, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.monthly-container .title {
+  display: flex;
+  justify-content:space-between;
+}
+.monthly-container .title .text-monthly-title {
+  color: #fff;
+}
+.monthly-container .title .button-detail {
+  background: url('/img/ic-arrow-right@3x.png') no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+.monthly-container .amount-container {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.monthly-container .amount-container .amount {
+  color: #FFF;
+  font-size: 38px;
+  flex: 1;
+  text-align: right;
+}
+.monthly-container .amount-container .unit-container {
+  flex: 1;
+}
+.monthly-container .amount-container .unit {
+  color: #F7F8F8;
+}
+.monthly-container .amount-container .text-together {
+  color: #FFF;
+}
+/**
+  Contents - USER E
+ */
+
+/**
+ Contents - Cards S
+ */
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 1500px;
+  overflow-x: auto;
+  margin: auto;
+  padding: 0 6px 20px 6px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  width: 13%;
+  min-width: 150px;
+  background-color: #FFF;
+  margin: 0 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.card-title {
+  display: flex;
+  justify-content:space-between;
+  border-radius: 16px 16px 0 0 ;
+  height: 50px;
+  background-color: #F7FAFD;
+  align-items: center;
+  padding: 0 14px 0 14px;
+}
+.card-title .text-card-title {
+  color: #9FA0A0;
+  font-weight: 700;
+}
+.card-title .button-detail {
+  background: url('/img/ic-arrow-right-grey@3x.png') no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.card .card-contents {
+  flex: 1;
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-contents .payment-image {
+  width: 90%;
+  height: 90%;
+  border-radius: 0 0 16px 16px;
+}
+
+/**
+ Menu list S
+ */
+.menu-list {
+  padding: 16px 0 56px 0;
+  background-color: #F6F6F6;
+}
+.menu-list .menu {
+  display: flex;
+  justify-content:space-between;
+  background-color: #FFF;
+  align-items: center;
+  padding: 16px 32px 16px 32px;
+  border-bottom: 1px solid #9FA0A0;
+}
+.menu-list .menu.last-menu {
+  border-bottom: 0;
+}
+.menu .text-card-title {
+  font-weight: 400;
+  color: #231815;
+}
+.menu .button-detail {
+  background: url('/img/ic-arrow-right-blue@3x.png') no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.text-copyright {
+  padding: 20px 32px 20px 32px;
+  color: #595757;
+  font-size: 12px;
+}

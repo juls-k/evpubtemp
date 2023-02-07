@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/recent-charge-history.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="header-top">
+    <a class="back-button" href="./index.html"></a>
+    <h1 class="current-page">충전이력</h1>
+  </div>
+<!--  <div class="header">-->
+<!--  </div>-->
+  <div class="contents">
+    <div class="recently-history-container first">
+      <h2 class="text-content-title">최근 7일간 충전내역</h2>
+      <div class="chart-container">
+        <div class="date-navigator">
+          <a class="button-previous"></a>
+          <span class="current-date">2023.01.30 ~ 2023.02.05</span>
+          <a class="button-next"></a>
+        </div>
+        <canvas id="recent-charge-week-chart"></canvas>
+      </div>
+    </div>
+    <div class="recently-history-container">
+      <h2 class="text-content-title">이번 달 충전 내역</h2>
+      <div class="info-card-container">
+        <div class="summary-card">
+          <h3 class="summary-title">충전시간</h3>
+          <span class="summary-unit">(min)</span>
+          <p class="summary-value">00:30.02</p>
+        </div>
+        <div class="summary-card">
+          <h3 class="summary-title">충전량</h3>
+          <span class="summary-unit">(kWh)</span>
+          <p class="summary-value">42.56</p>
+        </div>
+        <div class="summary-card">
+          <h3 class="summary-title">충전금액</h3>
+          <span class="summary-unit">(원)</span>
+          <p class="summary-value">10,250</p>
+        </div>
+      </div>
+    </div>
+    <div class="recently-history-container">
+      <h2 class="text-content-title">충전 세부 내역</h2>
+      <div class="table-container">
+        <table class="table-history">
+          <thead>
+            <th>날짜</th>
+            <th>위치</th>
+            <th>충전량(kWh)</th>
+            <th>금액(원)</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022.07.12</td>
+              <td>동탄복합문화센터</td>
+              <td>5.85</td>
+              <td>20,250</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>동탄복합문화센터</td>
+              <td>5.85</td>
+              <td>20,250</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>동탄복합문화센터</td>
+              <td>5.85</td>
+              <td>20,250</td>
+            </tr>
+            <tr>
+              <td>2022.07.12</td>
+              <td>동탄복합문화센터</td>
+              <td>5.85</td>
+              <td>20,250</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  const canvas = document.getElementById('recent-charge-week-chart');
+  const ctx = canvas.getContext('2d');
+  const gradient = ctx.createLinearGradient(0, 0, 0, 170);
+  gradient.addColorStop(0, '#5087C6');
+  gradient.addColorStop(0.5, '#3AA5CC');
+  gradient.addColorStop(1, '#48B6D7');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(20, 20, 150, 100);
+  const customTitle = {
+    id: 'customTitle',
+    beforeLayout: (chart, args, opts) => {
+      const { display, font } = opts;
+      if (!display) {
+        return;
+      }
+      const { ctx } = chart;
+      ctx.font = font || '12px "Helvetica Neue", Helvetica, Arial, sans-serif'
+      const { width } = ctx.measureText(opts.text);
+      chart.options.layout.padding.left = width * 0.3;
+      // chart.options.layout.padding.top = -200;
+    },
+    afterDraw: (chart, args, opts) => {
+      const { font, text, color } = opts;
+      const { ctx, chartArea: { top, bottom, left, right } } = chart;
+
+      if (opts.display) {
+        ctx.fillStyle = color || Chart.defaults.color
+        ctx.font = font || '12px "Helvetica Neue", Helvetica, Arial, sans-serif'
+        ctx.fillText(text, 3, bottom + 20);
+      }
+    }
+  }
+
+  new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        barThickness: 8,
+        borderWidth: 0,
+        label: '사용량',
+        data: [7, 0.3, 1.3, 7, 2, 8.4, 9.8],
+        backgroundColor: gradient,
+        borderRadius: 16,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        customTitle: {
+          display: true,
+          text: '(Hr)',
+        }
+      },
+      scales: {
+        y: {
+          // display: false,
+          border: {
+            display: false,
+          },
+          // title: {
+          //   display: true,
+          //   text: '(Hr)',
+          //   align: 'start',
+          // },
+          beginAtZero: false,
+        },
+        x: {
+          beginAtZero: false,
+          grid: {
+            display: false
+          },
+          border: {
+            display: false,
+          },
+          ticks: {
+            font: {
+              size: 14,
+              weight: 400,
+              color: '#9FA0A0',
+            }
+          }
+        }
+      },
+    },
+    plugins: [customTitle],
+    height: 400
+  });
+
+
+</script>
+</html>

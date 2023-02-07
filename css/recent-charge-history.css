@@ -1,0 +1,188 @@
+@import 'reset.css';
+.container {
+  display: flex;
+  flex-direction: column;
+}
+/**
+  Header S
+ */
+.header {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(314.32deg, #3E7EC1 51%, #1297A5 86%, #00A29A 100%);
+}
+.header-top {
+  display: flex;
+  padding: 10px 16px 10px 16px;
+  align-items: center;
+  gap: 14px;
+  position: fixed;
+  background: #FFF;
+  width: 100%;
+}
+.back-button {
+  background: url('/img/ic-back-black.png') no-repeat center;
+  background-size: contain;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.current-page {
+  text-align: center;
+  padding-top: 4px;
+  color: #3E3A39;
+  font-weight: 700;
+  font-family: 'Inter';
+  font-size: 20px;
+}
+/**
+  Header E
+ */
+
+
+/**
+  Footer S
+ */
+.footer {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  background-color: #4D73B8;
+  align-items: center;
+}
+.quick-menu-button {
+  flex: 1;
+}
+.quick-menu-button.quick-charge {
+  background: url("/img/ic-lightening@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.quick-menu-button.quick-location {
+  background: url("/img/ic-location@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.quick-menu-button.quick-my-page.active {
+  background: url("/img/ic-my-page-active@3x.png") no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+/**
+  Footer E
+ */
+
+
+/**
+  Contents
+ */
+.contents {
+  padding-top: 44px;
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/**
+  Contents - USER S
+ */
+.recently-history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px 20px 16px;
+  background-color: #FFF;
+}.recently-history-container.first {
+   padding: 32px 16px 20px 16px;
+ }
+.text-content-title {
+  color: #231815;
+  font-weight: 700;
+  font-size: 18px;
+}
+.chart-container {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chart-container .date-navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.chart-container .date-navigator .current-date {
+  font-size: 16px;
+}
+.chart-container .date-navigator .button-previous {
+  background: url('/img/ic-arrow-previous-grey@3x.png') no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.chart-container .date-navigator .button-next {
+  background: url('/img/ic-arrow-next-grey@3x.png') no-repeat center;
+  background-size: contain;
+  text-align: center;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.info-card-container {
+  display: flex;
+  justify-content: space-around
+}
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.summary-title {
+  font-weight: 600;
+}
+.summary-value {
+  padding-top: 8px;
+}
+
+.table-container {
+  display: flex;
+  padding: 16px 0 16px 0;
+}
+.table-history {
+  flex: 1;
+  color: #595757;
+  font-size: 15px;
+}
+
+.table-history th {
+  font-size: 14px;
+}
+.table-history td {
+  padding: 4px 0 4px 0;
+  text-align: center;
+}
+
+.table-history tr:first-child td {
+  padding: 16px 0 4px 0;
+}
+.table-history th:not(:nth-child(1)) {
+  border-left: 1px solid #9FA0A0;
+}
